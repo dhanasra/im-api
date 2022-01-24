@@ -1,0 +1,29 @@
+{
+  "name": "firebase-firestore-graphql",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && node lib/index.js",
+    "start": "node --experimental-json-modules index.js lib/index.js",
+    "deploy": "npm run build && gcloud app deploy"
+  },
+  "main": "lib/index.js",
+  "devDependencies": {
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.1"
+  },
+  "version": "1.0.0",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "apollo-server": "^3.6.2",
+    "firebase": "^9.6.4",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.16.0",
+    "graphql": "^16.2.0",
+    "graphql-tag": "^2.12.6",
+    "graphql-tools": "^8.2.0",
+    "lodash": "^4.17.21"
+  }
+}
