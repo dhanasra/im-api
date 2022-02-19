@@ -66,14 +66,14 @@ const Business = gql`
   }
 
   extend type Query {
-    getAllBusiness: [Business],  
-    getBusiness(phoneNumber: String!, businessId: String): Business
-    deleteBusiness(phoneNumber: String!, businessId: String): String
+    getAllBusiness(phoneNumber: String!): [Business],  
+    getBusiness(phoneNumber: String!, businessId: String!): Business
+    deleteBusiness(phoneNumber: String!, businessId: String!): String
   }
 
   extend type Mutation {
-    addBusiness(phoneNumber:String, business: BusinessInput):String,
-    updateBusiness(phoneNumber:String, business: BusinessInput):String
+    addBusiness(phoneNumber:String!, business: BusinessInput!):String,
+    updateBusiness(phoneNumber:String!, business: BusinessInput!):String
   }
 `;
 

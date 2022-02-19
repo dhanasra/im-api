@@ -29,14 +29,14 @@ const Party = gql`
   }
 
   extend type Query {
-    getParties: [Party],  
-    getParty(phoneNumber: String!, partyId: String): Party
-    deleteParty(phoneNumber: String!, partyId: String): String
+    getParties(phoneNumber: String!): [Party],  
+    getParty(phoneNumber: String!, partyId: String!): Party
+    deleteParty(phoneNumber: String!, partyId: String!): String
   }
 
   extend type Mutation {
-    addParty(phoneNumber:String, party: PartyInput):String,
-    updateParty(phoneNumber:String, party: PartyInput):String
+    addParty(phoneNumber:String!, party: PartyInput!):String,
+    updateParty(phoneNumber:String!, party: PartyInput!):String
   }
 `;
 

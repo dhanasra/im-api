@@ -40,14 +40,14 @@ const Transaction = gql`
   }
 
   extend type Query {
-    getTransactions: [Transaction],  
-    getTransaction(phoneNumber: String!, transactionId: String): Transaction
-    deleteTransaction(phoneNumber: String!, transactionId: String): String
+    getTransactions(phoneNumber: String!): [Transaction],  
+    getTransaction(phoneNumber: String!, transactionId: String!): Transaction
+    deleteTransaction(phoneNumber: String!, transactionId: String!): String
   }
 
   extend type Mutation {
-    addTransaction(phoneNumber:String, transaction: TransactionInput):String,
-    updateTransaction(phoneNumber:String, transaction: TransactionInput):String
+    addTransaction(phoneNumber:String!, transaction: TransactionInput!):String,
+    updateTransaction(phoneNumber:String!, transaction: TransactionInput!):String
   }
 `;
 

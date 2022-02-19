@@ -8,8 +8,8 @@ const User = gql`
   }
 
   extend type Mutation {
-    addUser(user: UserInput):String,
-    updateUser(phoneNumber:String, user: UserInput):String
+    addUser(user: UserInput!):String,
+    updateUser(phoneNumber:String!, user: UserInput!):String
   }
 
   input UserInput {

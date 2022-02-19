@@ -64,14 +64,14 @@ const Item = gql`
   }
 
   extend type Query {
-    getItems: [Item],  
-    getItem(phoneNumber: String!, itemId: String): Item
-    deleteItem(phoneNumber: String!, itemId: String): String
+    getItems(phoneNumber: String!): [Item],  
+    getItem(phoneNumber: String!, itemId: String!): Item
+    deleteItem(phoneNumber: String!, itemId: String!): String
   }
 
   extend type Mutation {
-    addItem(phoneNumber:String, item: ItemInput):String,
-    updateItem(phoneNumber:String, item: ItemInput):String
+    addItem(phoneNumber:String!, item: ItemInput!):String,
+    updateItem(phoneNumber:String!, item: ItemInput!):String
   }
 `;
 
