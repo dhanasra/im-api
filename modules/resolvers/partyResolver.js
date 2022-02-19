@@ -3,7 +3,7 @@ const Party = require('../types/party');
 
 module.exports = {
   Query: {
-    async getParties() {
+    async getParties(parent,args) {
       try {
         const partys = await admin
           .firestore()

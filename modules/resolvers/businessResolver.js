@@ -2,7 +2,7 @@ const admin = require('firebase-admin');
 
 module.exports = {
   Query: {
-    async getAllBusiness() {
+    async getAllBusiness(parent,args) {
       try {
         const business = await admin
           .firestore()
