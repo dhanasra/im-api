@@ -6,9 +6,9 @@ module.exports = {
       try {
         const transactions = await admin
           .firestore()
-          .collection('TransactionDB')
+          .collection('BusinessDB')
           .doc(args.phoneNumber)
-          .collection(args.transaction.type)
+          .collection('transactions')
           .get();
         return transactions.docs.map(transactions => transactions.data());
       } catch (error) {
@@ -19,10 +19,10 @@ module.exports = {
       try {
         const transactionsDoc = await admin
           .firestore()
-          .collection('TransactionDB')
+          .collection('BusinessDB')
           .doc(args.phoneNumber)
-          .collection(args.transaction.type)
-          .doc(args.transaction.id)
+          .collection('transactions')
+          .doc(args.transactionId)
           .get();
         const transactions = transactionsDoc.data() ;
         return transactions || new ValidationError('User ID not found');
@@ -34,10 +34,10 @@ module.exports = {
       try {
         await admin
           .firestore()
-          .collection('TransactionDB')
+          .collection('BusinessDB')
           .doc(args.phoneNumber)
-          .collection(args.transaction.type)
-          .doc(args.transaction.id)
+          .collection('transactions')
+          .doc(args.transactionId)
           .delete();
         return "success";
       } catch (error) {
@@ -51,11 +51,11 @@ module.exports = {
       try {
        await admin
           .firestore()
-          .collection('TransactionDB')
+          .collection('BusinessDB')
           .doc(args.phoneNumber)
-          .collection(args.transaction.type)
+          .collection('transactions')
           .doc(args.transaction.id)
-          .set(args.business);
+          .set(args.transaction);
         return "success";
       } catch (error) {
         throw new ApolloError(error);
@@ -65,9 +65,9 @@ module.exports = {
       try {
         await admin
           .firestore()
-          .collection('TransactionDB')
+          .collection('BusinessDB')
           .doc(args.phoneNumber)
-          .collection(args.transaction.type)
+          .collection('transactions')
           .doc(args.transaction.id)
           .update(args.transaction);
         return "sucess";

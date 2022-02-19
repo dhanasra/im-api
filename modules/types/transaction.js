@@ -40,7 +40,7 @@ const Transaction = gql`
   }
 
   extend type Query {
-    getTransactions(phoneNumber: String!): [Transaction],  
+    getTransactions(phoneNumber: String!,): [Transaction],  
     getTransaction(phoneNumber: String!, transactionId: String!): Transaction
     deleteTransaction(phoneNumber: String!, transactionId: String!): String
   }
