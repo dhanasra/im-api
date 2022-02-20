@@ -16,6 +16,7 @@ const Party = gql`
   }
 
   input PartyInput {
+    id: String,
     name: String,
     type: String,
     phoneNumber: String,
