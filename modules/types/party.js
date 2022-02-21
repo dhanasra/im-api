@@ -11,6 +11,7 @@ const Party = gql`
     shippingAddress: String,
     creditPeriod: String,
     creditLimit: String,
+    placeOfSupply: String,
     balance: String,
     isPay: Boolean
   }
@@ -25,6 +26,7 @@ const Party = gql`
     shippingAddress: String,
     creditPeriod: String,
     creditLimit: String,
+    placeOfSupply: String,
     balance: String,
     isPay: Boolean
   }
