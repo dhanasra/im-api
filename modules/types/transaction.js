@@ -36,7 +36,9 @@ const Transaction = gql`
     subTotal: String,
     total: String,
     amountReceived: String,
-    notes: String
+    notes: String,
+    type: String,
+    paymentMode: String,
   }
 
   extend type Query {
