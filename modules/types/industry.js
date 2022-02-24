@@ -8,7 +8,6 @@ const Industry = gql`
   extend type Query {
     getIndustries: [Industry],   
   }
-
 `;
 
-module.exports = Business;
+module.exports = Industry;
