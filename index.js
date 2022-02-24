@@ -6,11 +6,13 @@ const party  = require('./modules/types/party');
 const item  = require('./modules/types/item');
 const transaction  = require('./modules/types/transaction');
 const business  = require('./modules/types/business');
+const industry  = require('./modules/types/industry');
 const userResolvers  = require('./modules/resolvers/userResolver');
 const partyResolvers  = require('./modules/resolvers/partyResolver');
 const itemResolvers  = require('./modules/resolvers/itemResolver');
 const businessResolvers  = require('./modules/resolvers/businessResolver');
 const transactionResolvers  = require('./modules/resolvers/transactionResolver');
+const industryResolvers  = require('./modules/resolvers/industryResolver');
 const admin = require('firebase-admin');
 const serviceAccount = require('./service-account.json');
 const { getAuth } = require('firebase/auth');
@@ -37,8 +39,8 @@ const Query = gql`
 const resolvers = {};
 
 const userSchema = makeExecutableSchema({
-  typeDefs: [Query,user,party,item,business,transaction],
-  resolvers: merge(resolvers,userResolvers,partyResolvers,itemResolvers,businessResolvers,transactionResolvers),
+  typeDefs: [Query,user,party,item,business,transaction,industry],
+  resolvers: merge(resolvers,userResolvers,partyResolvers,itemResolvers,businessResolvers,transactionResolvers,industryResolvers),
 });
 
 const schema = mergeSchemas({
