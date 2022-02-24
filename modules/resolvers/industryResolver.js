@@ -2,13 +2,13 @@ const admin = require('firebase-admin');
 
 module.exports = {
   Query: {
-    async getIndustries() {
+    async getIndustrys() {
       try {
-        const industries = await admin
+        const Industrys = await admin
           .firestore()
-          .collection('industries')
+          .collection('industrys')
           .get();
-        return industries.docs.map(industry => industry.data());
+        return Industrys.docs.map(Industry => Industry.data());
       } catch (error) {
         throw new ApolloError(error);
       }
