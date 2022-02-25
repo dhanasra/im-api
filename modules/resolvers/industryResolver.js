@@ -10,7 +10,7 @@ module.exports = {
           .collection('industries')
           .doc('types')
           .get();
-        return industries;
+        return industries.data();
       } catch (error) {
         throw new ApolloError(error);
       }
