@@ -2,7 +2,11 @@ const { gql } = require('apollo-server');
 
 const Industry = gql`
   extend type Query {
-    getIndustries: [String]
+    getIndustries: Type
+  }
+
+  type Types{
+    types: [String]
   }
 `;
 
