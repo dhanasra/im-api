@@ -10,7 +10,7 @@ module.exports = {
           .collection('industries')
           .doc('types')
           .get();
-        return industries.docs.map(industry => industry.data());
+        return industries;
       } catch (error) {
         throw new ApolloError(error);
       }
