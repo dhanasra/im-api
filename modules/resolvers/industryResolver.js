@@ -5,12 +5,12 @@ module.exports = {
   Query: {
     async getIndustries() {
       try {
-        const industries = await admin
+        const industry = await admin
           .firestore()
-          .collection('industries')
-          .doc('types')
+          .collection('industries/types')
           .get();
-        return industries.data();
+        const indus = industry.data() ;
+        return indus || new ValidationError('indus ID not found');
       } catch (error) {
         throw new ApolloError(error);
       }
