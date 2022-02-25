@@ -8,6 +8,7 @@ module.exports = {
         const industries = await admin
           .firestore()
           .collection('industries')
+          .doc('types')
           .get();
         return industries.docs.map(industry => industry.data());
       } catch (error) {
